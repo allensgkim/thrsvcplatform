@@ -44,11 +44,11 @@ public class ItemDetailSellerActivity extends AppCompatActivity {
         detailContents = new ArrayList<>();
         // 순서를 잘 지켜줘야한다.. 아니면 NullPointException 또는 RuntimeException이 발생하므로 반드시 순서를 준수한다.
         // 1. ItemDetailProdAdaptor를 생성한다.
-        ItemDetailProdAdaptor      itemDetailProdAdaptor = new ItemDetailProdAdaptor(detailContents);
+        final ItemDetailProdAdaptor      itemDetailProdAdaptor = new ItemDetailProdAdaptor(detailContents);
         // 2. RecyclerView를 findViewById로 선언한다.
-        RecyclerView               recyclerView          = findViewById(R.id.recycler_view_detail_comments);
+        final RecyclerView               recyclerView          = findViewById(R.id.recycler_view_detail_comments);
         // 3. LayoutManager를 생성한다.
-        RecyclerView.LayoutManager layoutManager         = new LinearLayoutManager(this);
+        final RecyclerView.LayoutManager layoutManager         = new LinearLayoutManager(this);
         // 4. layoutManger를 recyclerView에 연결한다.
         recyclerView.setLayoutManager(layoutManager);
         // 5. itemDetailProdAdaptor를 recyclerView에 연결한다.
