@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">thrSvcPlatform</string>
+    <string name="default_web_client_id">271388989439-jlkh8j9ruedacgr3pe29vvhmussqcghh.apps.googleusercontent.com</string>
+    <!-- Main Seller button title -->
+    <string name="main_seller_title">판매자 이름</string>
+    <string name="main_seller_one">코멘트</string>
+    <string name="main_seller_two">주문목록</string>
+    <string name="main_seller_three">전체상품</string>
 </resources>

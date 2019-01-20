@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:orientation="horizontal"
+    android:weightSum="10"
+    android:background="#00AABBCC"
+    android:gravity="center_vertical">
+
+    <!-- 아이콘 위치를 내마음대로 설정하기 위해서 아이콘이 있어야할 위치에 아무것도 없는 스페이스 위치를 주는것이다. -->
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="9" />
+
+    <Button
+        android:id="@+id/button_share_menu_item_detail_seller"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:onClick="btnItemDetailSellerClicked"
+        android:background="@android:drawable/ic_menu_share" />
+
+</LinearLayout>

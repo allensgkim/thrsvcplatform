@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="10"
+    android:background="@color/colorMediumGrey"
+    android:gravity="center_vertical">
+    <!-- activity_item_list_seller.xml 사용중인 AppBarLayout 의 메뉴 ToolBar 선언된 부분이다. -->
+
+    <Button
+        android:id="@+id/button_back_menu_item_list_seller"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:background="@android:drawable/ic_menu_revert"/>
+
+    <SearchView
+        android:id="@+id/search_menu_item_list_seller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="6" />
+
+    <Spinner
+        android:id="@+id/spinner_menu_item_list_seller"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3" />
+
+</LinearLayout>

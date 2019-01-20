@@ -1,21 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainSellerActivity">
 
-    <TextView
-        android:id="@+id/txtItemListSellerActivity"
-        android:layout_width="wrap_content"
+    <!-- 상단 툴바 -->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout_main_seller"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="판매자 메인 화면"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:fitsSystemWindows="true">
 
-</android.support.constraint.ConstraintLayout>
+        <!-- CollapsingToolbarLayout -->
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar_main_seller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="@color/colorPrimary"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="64dp">
+
+            <!-- Toobar를 위로 올림 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.8">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_seller_title"
+                    android:textSize="50dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+            <!-- end Toobar를 위로 올림 -->
+
+            <!-- Toolbar 툴바 위치를 지정한다. 현재 CollapsingToolbarLayout의 하단을 지정하였다. -->
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_main_seller"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="bottom"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:layout_collapseMode="pin">
+
+                <Button
+                    android:id="@+id/button_main_seller_01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="btnMainSeller01Clicked"
+                    android:text="@string/main_seller_one" />
+
+                <Button
+                    android:id="@+id/button_main_seller_02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="btnMainSeller02Clicked"
+                    android:text="@string/main_seller_two" />
+
+                <Button
+                    android:id="@+id/button_main_seller_03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="btnMainSeller03Clicked"
+                    android:text="@string/main_seller_three" />
+
+            </android.support.v7.widget.Toolbar>
+            <!-- end Toolbar 툴바 위치를 지정한다. 현재 CollapsingToolbarLayout의 하단을 지정하였다. -->
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+        <!-- end CollapsingToolbarLayout -->
+    </android.support.design.widget.AppBarLayout>
+    <!-- end 상단 툴바 -->
+
+    <!-- 하단 -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_main_seller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:fitsSystemWindows="true"
+        android:scrollbars="vertical"
+        android:background="@color/colorLightGrey"
+        android:layout_gravity="center"
+        android:layout_marginBottom="60dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <!-- end 하단 -->
+
+</android.support.design.widget.CoordinatorLayout>

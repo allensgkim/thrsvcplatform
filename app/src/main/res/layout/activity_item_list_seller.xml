@@ -1,21 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorLightGrey"
     tools:context=".ItemListSellerActivity">
 
-    <TextView
-        android:id="@+id/txtItemListSellerActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:textSize="20dp"
-        android:text="제품 목록 화면(판매자)"
+    <!-- Menu 즉 검색 및 정렬을 하는 bar 를 만들기위해서 AppBarLayout을 선언한다 -->
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:fitsSystemWindows="true">
+
+        <!-- 이미 만들어진 xml을 삽입한다. 메뉴로 사용될 back, 검색, 정렬 3가지 유형의 Component가 존재 -->
+        <include
+            android:id="@+id/toolbar_item_list_seller"
+            app:layout_constraintBottom_toTopOf="@id/recycler_view_all_items"
+            layout="@layout/menu_layout_list_seller"
+            />
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_all_items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/colorLightGrey"
+        android:clipToPadding="false"
+        android:fitsSystemWindows="true"
+        android:scrollbars="vertical"
+        android:layout_marginTop="-20dp"
+        android:paddingBottom="30dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar_item_list_seller"
+        app:layout_constraintVertical_bias="1.0"/>
 
-</android.support.constraint.ConstraintLayout>
+</android.support.design.widget.CoordinatorLayout>

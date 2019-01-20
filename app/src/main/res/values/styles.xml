@@ -1,7 +1,8 @@
 <resources>
 
+    <!-- 앱안에서 타이틀바를 지정한다. 필요없으므로 NoActionBar를 정하여서 타이틀바를 제거하여 앱에서 구동되게 한다. -->
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

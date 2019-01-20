@@ -6,16 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/google_login_button"
+        android:onClick="signIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="500dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </com.google.android.gms.common.SignInButton>
+
     <TextView
         android:id="@+id/txtItemListSellerActivity"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:textSize="20dp"
         android:text="로그인 화면"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>

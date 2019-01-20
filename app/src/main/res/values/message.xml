@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="spinner_order_name">이름</string>
+    <string name="spinner_order_date">등록/날짜</string>
+    <string name="spinner_order_sale">판매량</string>
+    <string name="spinner_order_favorite">좋아요</string>
+</resources>
