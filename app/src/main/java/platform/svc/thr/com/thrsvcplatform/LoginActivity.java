@@ -6,39 +6,112 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
-public class LoginActivity extends AppCompatActivity {
+
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private static final String TAG        = "LoginActivity";
+    private static final int    RC_SIGN_IN = 9001;
 
     // [START declare_auth]
     private FirebaseAuth firebaseAuth;
     // [END declare_auth]
 
-    private static final String TAG        = "LoginActivity";
-    private static final int    RC_SIGN_IN = 9001;
+    // [START mGoogleSignInClient]
+    private GoogleSignInClient mGoogleSignInClient;
+    // [END mGoogleSignInClient]
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // [START initialize_auth]
+        // [START config_signin]
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.key_default_web_client_id))
+                .build();
+        // [END config_signin]
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        // [START initialize_firebaseAuth]
         firebaseAuth = FirebaseAuth.getInstance();
-        // [END initialize_auth]
+        // [END initialize_firebaseAuth]
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        //FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+
+        Log.w(TAG, "onStart");
+        Log.w(TAG, "onStart");
+        Log.w(TAG, "onStart");
+        Log.w(TAG, "onStart");
+        Log.w(TAG, "onStart");
+        Log.w(TAG, "onStart");
+        Log.w(TAG, "onStart");
+        Log.w(TAG, "onStart");
+        Log.w(TAG, "onStart");
+        Log.w(TAG, "onStart");
     }
 
     /**
      * 구글 로그인 아이디
-     * @param view
      */
-    private void signIn(View view) {
+    private void signIn() {
+        Log.w(TAG, "signIn");
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        Log.w(TAG, RC_SIGN_IN + " : " + requestCode );
+        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                // Google Sign In was successful, authenticate with Firebase
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                Log.w(TAG, "account.getDisplayName() : " + account.getDisplayName());
+                Log.w(TAG, "account.getEmail() : " + account.getEmail());
+                Log.w(TAG, "account.getFamilyName() : " + account.getFamilyName());
+                Log.w(TAG, "account.getGivenName() : " + account.getGivenName());
+                Log.w(TAG, "account.getId() : " + account.getId());
+                Log.w(TAG, "account.getIdToken() : " + account.getIdToken());
+                Log.w(TAG, "account.getObfuscatedIdentifier() : " + account.getObfuscatedIdentifier());
+                Log.w(TAG, "account.getServerAuthCode() : " + account.getServerAuthCode());
+                Log.w(TAG, "account.toJson() : " + account.toJson());
+                Log.w(TAG, "account.toJsonForStorage() : " + account.toJsonForStorage());
+            } catch (ApiException e) {
+                // Google Sign In failed, update UI appropriately
+                Log.w(TAG, "Google sign in failed", e);
+                // fail ...
+            }
+        }
+    }
 
+    /**
+     * onClick Event
+     * @param view
+     */
+    @Override
+    public void onClick(View view) {
+        System.out.println("view.getId() : " + view.getId());
+        switch ( view.getId() ) {
+            case  R.id.google_login_button : signIn();
+                break;
+            default: break;
+        }
     }
 }

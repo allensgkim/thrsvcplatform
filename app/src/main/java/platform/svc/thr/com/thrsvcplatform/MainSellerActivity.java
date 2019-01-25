@@ -29,7 +29,7 @@ public class MainSellerActivity extends AppCompatActivity {
         final RecyclerView               recyclerView    = findViewById(R.id.recycler_view_main_seller);
 
         // 1. 메인 화면인 판매자 메인 화면에서 하단의 그리드를 구성하는 부분이며 컨테츠 갯수는 spanCount로 조절한다. 현재 3개
-        final RecyclerView.LayoutManager layoutManager   = new GridLayoutManager(this, 3);
+        final RecyclerView.LayoutManager layoutManager   = new GridLayoutManager(this, 2);
 
         // 1번으로 선언된 layoutManager를 recyclerView에 연결.
         recyclerView.setLayoutManager(layoutManager);

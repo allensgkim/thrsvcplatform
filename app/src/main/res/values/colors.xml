@@ -12,5 +12,5 @@
     <color name="colorBrilliantGrey">#DDDDDD</color>
     <color name="colorLightGrey">#BBBBBB</color>
     <color name="colorMediumGrey">#999999</color>
-    <color name="colorDarkGrey">#555555</color>
+    <color name="loginConstraintLayoutBackground">#E2BC00</color>
 </resources>

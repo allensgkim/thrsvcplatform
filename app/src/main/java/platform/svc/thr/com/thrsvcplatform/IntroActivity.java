@@ -16,7 +16,7 @@ public class IntroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_intro);
 
         // SharedPreference에서 자동 로그인 체크되어 있는지 가져오기, 자동이라면 로그인 정보 가져오기
-        isAutoLogIn = true;
+        isAutoLogIn = false;
         if( isAutoLogIn ) {
             // SharedPreference에서 로그인 true면 아이디, 패스워드 가져오기
             isLoggedIn = true;
@@ -31,7 +31,7 @@ public class IntroActivity extends AppCompatActivity {
                     startActivity(intentMain);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
-                    finish();
+                    finish(); // callback 받을 수 있다.
                 }
             }, 2000);
 
