@@ -91,17 +91,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             try {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-                Log.w(TAG, "account.getDisplayName() : " + account.getDisplayName());
-                Log.w(TAG, "account.getEmail() : " + account.getEmail());
-                Log.w(TAG, "account.getFamilyName() : " + account.getFamilyName());
-                Log.w(TAG, "account.getGivenName() : " + account.getGivenName());
-                Log.w(TAG, "account.getId() : " + account.getId());
-                Log.w(TAG, "account.getIdToken() : " + account.getIdToken());
-                Log.w(TAG, "account.getObfuscatedIdentifier() : " + account.getObfuscatedIdentifier());
-                Log.w(TAG, "account.getServerAuthCode() : " + account.getServerAuthCode());
-                Log.w(TAG, "account.toJson() : " + account.toJson());
-                Log.w(TAG, "account.toJsonForStorage() : " + account.toJsonForStorage());
-
                 // firebase Google
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
@@ -118,17 +107,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         Log.d(TAG, "firebaseAuthWithGoogle : " + account.getId());
 
-        AuthCredential credential = GoogleAuthProvider.getCredential( account.getIdToken(), null );
+        final AuthCredential credential = GoogleAuthProvider.getCredential( account.getIdToken(), null );
 
         firebaseAuth.signInWithCredential(credential)
                     .addOnCompleteListener(listenerAuth -> {
-
+                        if ( listenerAuth.isSuccessful() ) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithCredential:success");
+                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                        } else {
+                        }
                     });
-
-
-
-        Log.w(TAG, credential.getProvider());
-        Log.w(TAG, credential.getSignInMethod());
     }
     // [END auth_with_google]
 
