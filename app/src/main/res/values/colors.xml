@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--<color name="colorPrimary">#008577</color>-->
-    <color name="colorPrimary">#999999</color>
+    <color name="colorPrimary">#ff0000</color>
     <!--<color name="colorPrimaryDark">#00574B</color>-->
-    <color name="colorPrimaryDark">#999999</color>
+    <color name="colorPrimaryDark">#00574B</color>
     <!--<color name="colorAccent">#D81B60</color>-->
     <color name="colorAccent">#D81B60</color>
 
@@ -13,4 +13,12 @@
     <color name="colorLightGrey">#BBBBBB</color>
     <color name="colorMediumGrey">#999999</color>
     <color name="loginConstraintLayoutBackground">#E2BC00</color>
+
+    <color name="colorHeader">#EAC300</color>
+    <color name="colorBody">#E2BC00</color>
+    <color name="colorBtnBg">#003E00</color>
+
+    <color name="blueText">#0F1E78</color>
+    <color name="whiteText">#ffffff</color>
+    <color name="grayText">#a0a0a0</color>
 </resources>

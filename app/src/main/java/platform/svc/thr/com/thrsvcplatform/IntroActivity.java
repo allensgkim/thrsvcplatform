@@ -25,25 +25,20 @@ public class IntroActivity extends AppCompatActivity {
         // 로그인 체크
         if( isLoggedIn ) {
             // 1. 자동 로그인 검사 ok 된 사람이므로 메인 화면으로
-            new Handler().postDelayed(new Runnable() {
-                public void run() {
+            new Handler().postDelayed( () -> {
                     Intent intentMain = new Intent(getApplicationContext(), MainSellerActivity.class);
                     startActivity(intentMain);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
                     finish(); // callback 받을 수 있다.
-                }
             }, 2000);
 
         }else{
             // 2. 로그인 안 돼 있으므로 로그인 화면으로
-            new Handler().postDelayed(new Runnable() {
-                public void run() {
+            new Handler().postDelayed( () -> {
                     Intent intentLogin = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(intentLogin);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     finish();
-                }
             }, 2000);
         }
     }

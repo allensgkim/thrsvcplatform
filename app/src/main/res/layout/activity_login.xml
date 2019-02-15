@@ -1,40 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/loginConstraintLayoutBackground"
+    android:background="@color/colorBody"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".LoginActivity">
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/google_login_button"
-        android:onClick="signIn"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_circle"
+        android:orientation="vertical"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="@dimen/login_circle"
+            android:layout_height="@dimen/login_circle"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/shape_intro">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/title_login"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/login_text"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="500dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_in"
+            android:textSize="@dimen/sign_text"
+            android:gravity="center"
+            android:textColor="@color/blueText"
+            android:textStyle="bold" />
 
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_msg"
+            android:textSize="@dimen/sign_sub_text"
+            android:gravity="center"
+            android:textColor="@color/whiteText" />
+    </LinearLayout>
 
-    </com.google.android.gms.common.SignInButton>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"></LinearLayout>
 
-    <TextView
-        android:id="@+id/txtItemListSellerActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:text="로그인 화면"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/padding_lfrt"
+        android:paddingRight="@dimen/padding_lfrt">
 
+        <EditText
+            android:id="@+id/usr_id"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/input_tx"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:paddingTop="@dimen/padding_tpbt"
+            android:paddingBottom="@dimen/padding_tpbt"
+            android:text="@string/usr_id_phn"
+            android:inputType="text"
+            android:textColor="@color/grayText"
+            android:background="@drawable/shape_edit" />
 
-</android.support.constraint.ConstraintLayout>
+        <EditText
+            android:id="@+id/usr_pwd"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/input_tx"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:paddingTop="@dimen/padding_tpbt"
+            android:paddingBottom="@dimen/padding_tpbt"
+            android:text="@string/usr_pwd"
+            android:inputType="text"
+            android:textColor="@color/grayText"
+            android:background="@drawable/shape_edit" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingLeft="@dimen/padding_lfrt"
+        android:paddingRight="@dimen/padding_lfrt">
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/input_tx"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="@string/sign_btn01"
+            android:inputType="text"
+            android:background="@drawable/shape_button"/>
+
+        <Button
+            android:id="@+id/btn_cre_act"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/input_tx"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="@string/sign_btn02"
+            android:inputType="text"
+            android:background="@drawable/shape_button"/>
+    </LinearLayout>
+</LinearLayout>

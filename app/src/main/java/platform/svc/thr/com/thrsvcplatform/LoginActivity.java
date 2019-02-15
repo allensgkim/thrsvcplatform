@@ -36,13 +36,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        findViewById(R.id.google_login_button).setOnClickListener(this);
+        findViewById(R.id.btn_login).setOnClickListener(this);
 
         // [START config_signin]
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.key_default_web_client_id))
-                .requestEmail()
-                .build();
+                                                         .requestIdToken(getString(R.string.key_default_web_client_id))
+                                                         .requestEmail()
+                                                         .build();
         // [END config_signin]
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
@@ -109,12 +109,24 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         final AuthCredential credential = GoogleAuthProvider.getCredential( account.getIdToken(), null );
 
-        firebaseAuth.signInWithCredential(credential)
-                    .addOnCompleteListener(listenerAuth -> {
+        firebaseAuth.signInWithCredential( credential )
+                    .addOnCompleteListener( listenerAuth -> {
                         if ( listenerAuth.isSuccessful() ) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
-                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                            FirebaseUser user = listenerAuth.getResult().getUser();
+                            Log.d(TAG, "user.getDisplayName(): " + user.getDisplayName());
+                            Log.d(TAG, "user.getPhoneNumber(): " + user.getPhoneNumber());
+                            Log.d(TAG, user.getEmail());
+                            //Log.d(TAG, user.getPhoneNumber());
+                            Log.d(TAG, user.getProviderId());
+                            Log.d(TAG, user.getUid());
+                            Log.d(TAG, user.zzs());
+                            Log.d(TAG, user.zzt());
+
+                            final Intent intent = new Intent(getApplicationContext(), LoginAddActivity.class);
+                            intent.putExtra("user", user);
+                            startActivity(intent);
                         } else {
                         }
                     });
@@ -125,7 +137,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         final int id = view.getId();
         switch (id) {
-            case R.id.google_login_button : signIn();
+            case R.id.btn_login : signIn();
                 break;
             default: break;
         }

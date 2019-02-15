@@ -5,4 +5,53 @@
     <string name="main_seller_one">코멘트</string>
     <string name="main_seller_two">주문목록</string>
     <string name="main_seller_three">전체상품</string>
+    <string name="title_intro">INTRO</string>
+    <string name="title_login">Log-In</string>
+    <string name="user_account">New User Account</string>
+
+    <string name="sign_in">Sign In</string>
+    <string name="sign_msg">With your account</string>
+
+    <!-- Button's name defines -->
+    <string name="sign_btn01">Sign In</string>
+    <string name="sign_btn02">Create Account</string>
+    <string name="submit_btn">Sumit</string>
+
+    <!-- Item name defines -->
+    <string name="usr_id_phn">ID or Phone</string>
+    <string name="usr_id">ID</string>
+    <string name="usr_pwd">Password</string>
+    <string name="usr_nm">User Name</string>
+    <string name="biz_no">Biz. #No.</string>
+    <string name="usr_cel_phn_no">Cellphone #No.</string>
+    <string name="usr_eml_addr">e-Mail Address</string>
+    <string name="usr_addr">Address</string>
+    <string name="biz_tp_seller">Seller</string>
+    <string name="biz_tp_buyer">Buyer</string>
+    <string name="cust_cd">거래처 코드</string>
+    <string name="cust_nm">주문자 or 판매처 이름</string>
+    <string name="cust_nm_seller">판매처 이름</string>
+    <string name="cust_nm_buyer">주문자 이름</string>
+    <string name="cust_addr">주소지</string>
+    <string name="biz_tp_cd">주문 or 판매 구분</string>
+    <string name="biz_tp_cd_seller">판매</string>
+    <string name="biz_tp_cd_buyer">주문</string>
+    <string name="cust_pfl_expl">거래처 소개 설명</string>
+    <string name="cust_conts">의사소통 내용</string>
+    <string name="itm_ut_prc">제품 단가</string>
+    <string name="prct_dt">생산 일자</string>
+    <string name="itm_no">제품번호</string>
+    <string name="itm_nm">제품명</string>
+    <string name="itm_dtl_expl">제품 상세 설명</string>
+    <string name="colr_cd">색상</string>
+    <string name="sz_cd">Size</string>
+    <string name="ord_qty">주문 수량</string>
+    <string name="rcv_qty">입고 수량</string>
+    <string name="ship_qty">출고 수량</string>
+
+    <!-- Flag yes or no describe -->
+    <string name="sle_itm_flg">세일제품여부</string>
+    <string name="clse_agmt_flg">약관 동의 여부</string>
+    <string name="person_security_flg">개인정보 보호 정책 동의 유무</string>
+
 </resources>
